@@ -81,21 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/js/tickets.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./public/assets/js/tickets.js");
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./assets/js/tickets.js":
-/*!******************************!*\
-  !*** ./assets/js/tickets.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\r\n\r\nif (window.location.href.indexOf(\"tickets\") > -1) {\r\n\r\n  const purchaseBtn = document.getElementById(\"purchaseBtn\");\r\n  const purchaseEmail = document.getElementById(\"purchaseEmail\");\r\n  const modalEl = document.querySelector(\".modal-content\");\r\n  const modalBodyEl = document.querySelector(\".modal-body\");\r\n  const modalFooterEl = document.querySelector(\".modal-footer\");\r\n\r\n\r\n  function purchaseTicket () {\r\n\r\n    modalEl.removeChild(modalBodyEl)\r\n    modalEl.removeChild(modalFooterEl)\r\n\r\n    modalEl.append(createEl(\"div\", {class: \"modal-body\"},\r\n      createEl(\"h5\", {class: \"modal-title\"}, \r\n      `Thanks for requesting a ticket purchase! We will send an email to ${purchaseEmail.value} to complete the order form!`\r\n      ),\r\n    ))\r\n    \r\n  }\r\n  purchaseBtn.addEventListener(\"click\", purchaseTicket);\r\n}\n\n//# sourceURL=webpack:///./assets/js/tickets.js?");
-
-/***/ }),
 
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
@@ -139,6 +128,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 /***/ (function(module, exports) {
 
 eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn this;\n})();\n\ntry {\n\t// This works if eval is allowed (see CSP)\n\tg = g || new Function(\"return this\")();\n} catch (e) {\n\t// This works if the window reference is available\n\tif (typeof window === \"object\") g = window;\n}\n\n// g can still be undefined, but nothing to do about it...\n// We return undefined, instead of nothing here, so it's\n// easier to handle this case. if(!global) { ...}\n\nmodule.exports = g;\n\n\n//# sourceURL=webpack:///./node_modules/webpack/buildin/global.js?");
+
+/***/ }),
+
+/***/ "./public/assets/js/tickets.js":
+/*!*************************************!*\
+  !*** ./public/assets/js/tickets.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n\nif (window.location.href.indexOf(\"tickets\") > -1) {\n\n  const purchaseBtn = document.getElementById(\"purchaseBtn\");\n  const purchaseEmail = document.getElementById(\"purchaseEmail\");\n  const modalEl = document.querySelector(\".modal-content\");\n  const modalBodyEl = document.querySelector(\".modal-body\");\n  const modalFooterEl = document.querySelector(\".modal-footer\");\n\n\n  function purchaseTicket () {\n\n    modalEl.removeChild(modalBodyEl)\n    modalEl.removeChild(modalFooterEl)\n\n    modalEl.append(createEl(\"div\", {class: \"modal-body\"},\n      createEl(\"h5\", {class: \"modal-title\"}, \n      `Thanks for requesting a ticket purchase! We will send an email to ${purchaseEmail.value} to complete the order form!`\n      ),\n    ))\n    \n  }\n  purchaseBtn.addEventListener(\"click\", purchaseTicket);\n}\n\n//# sourceURL=webpack:///./public/assets/js/tickets.js?");
 
 /***/ })
 

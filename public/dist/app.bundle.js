@@ -81,43 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/js/script.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./public/assets/js/script.js");
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./assets/img/food-table.jpg":
-/*!***********************************!*\
-  !*** ./assets/img/food-table.jpg ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = \"assets/img/food-table.jpg\";\n\n//# sourceURL=webpack:///./assets/img/food-table.jpg?");
-
-/***/ }),
-
-/***/ "./assets/img/grill.jpg":
-/*!******************************!*\
-  !*** ./assets/img/grill.jpg ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = \"assets/img/grill.jpg\";\n\n//# sourceURL=webpack:///./assets/img/grill.jpg?");
-
-/***/ }),
-
-/***/ "./assets/js/script.js":
-/*!*****************************!*\
-  !*** ./assets/js/script.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("/* WEBPACK VAR INJECTION */(function($) {__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\nconst img1 = __webpack_require__(/*! ../../assets/img/food-table.jpg */ \"./assets/img/food-table.jpg\");\nconst img2 = __webpack_require__(/*! ../../assets/img/grill.jpg */ \"./assets/img/grill.jpg\");\n\n$(document).ready(function() {\n  // First image is hard coded in index.html\n  const carouselSlides = [\n    {\n      title: \"We travel all over the US\",\n      subtitle: \"Check out our schedule!\",\n      img: img1,\n      btnText: \"View Schedule\",\n      btnUrl: \"schedule.html\"\n    },\n    {\n      title: \"Our food is seriously the bomb!\",\n      subtitle: \"What are you waiting for?\",\n      img: img2,\n      btnText: \"Purchase Tickets\",\n      btnUrl: \"tickets.html\"\n    },\n  ];\n  \n  carouselSlides.forEach((slide, i) => {\n    $('.carousel-inner').append(`\n  <div class=\"carousel-item fullscreen-carousel\" style=\"background-image: url('${slide.img}')\">\n    <div class=\"d-flex h-100 align-items-center justify-content-center carousel-caption\">\n        <div class=\"container\">\n          <div class=\"row align-items-center justify-content-center\">\n              <h2 class=\"display-4 mb-2\">${slide.title}</h2>\n          </div>\n          <div class=\"row align-items-center justify-content-center\"> \n            <h3>${slide.subtitle}</h3>\n          </div>\n          <div class=\" mt-4 row align-items-center justify-content-center\"> \n            <a class=\"btn btn-primary\" href=\"${slide.btnUrl}\">\n                ${slide.btnText}\n            </a>\n          </div>\n        </div>\n    </div>\n  </div>`)\n  })\n});\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./assets/js/script.js?");
-
-/***/ }),
 
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
@@ -161,6 +128,39 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 /***/ (function(module, exports) {
 
 eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn this;\n})();\n\ntry {\n\t// This works if eval is allowed (see CSP)\n\tg = g || new Function(\"return this\")();\n} catch (e) {\n\t// This works if the window reference is available\n\tif (typeof window === \"object\") g = window;\n}\n\n// g can still be undefined, but nothing to do about it...\n// We return undefined, instead of nothing here, so it's\n// easier to handle this case. if(!global) { ...}\n\nmodule.exports = g;\n\n\n//# sourceURL=webpack:///./node_modules/webpack/buildin/global.js?");
+
+/***/ }),
+
+/***/ "./public/assets/img/food-table.jpg":
+/*!******************************************!*\
+  !*** ./public/assets/img/food-table.jpg ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"public/assets/img/food-table.jpg\";\n\n//# sourceURL=webpack:///./public/assets/img/food-table.jpg?");
+
+/***/ }),
+
+/***/ "./public/assets/img/grill.jpg":
+/*!*************************************!*\
+  !*** ./public/assets/img/grill.jpg ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"public/assets/img/grill.jpg\";\n\n//# sourceURL=webpack:///./public/assets/img/grill.jpg?");
+
+/***/ }),
+
+/***/ "./public/assets/js/script.js":
+/*!************************************!*\
+  !*** ./public/assets/js/script.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("/* WEBPACK VAR INJECTION */(function($) {__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\nconst img1 = __webpack_require__(/*! ../../assets/img/food-table.jpg */ \"./public/assets/img/food-table.jpg\");\nconst img2 = __webpack_require__(/*! ../../assets/img/grill.jpg */ \"./public/assets/img/grill.jpg\");\n\n$(document).ready(function() {\n  // First image is hard coded in index.html\n  const carouselSlides = [\n    {\n      title: \"We travel all over the US\",\n      subtitle: \"Check out our schedule!\",\n      img: img1,\n      btnText: \"View Schedule\",\n      btnUrl: \"schedule.html\"\n    },\n    {\n      title: \"Our food is seriously the bomb!\",\n      subtitle: \"What are you waiting for?\",\n      img: img2,\n      btnText: \"Purchase Tickets\",\n      btnUrl: \"tickets.html\"\n    },\n  ];\n  \n  carouselSlides.forEach((slide, i) => {\n    $('.carousel-inner').append(`\n  <div class=\"carousel-item fullscreen-carousel\" style=\"background-image: url('${slide.img}')\">\n    <div class=\"d-flex h-100 align-items-center justify-content-center carousel-caption\">\n        <div class=\"container\">\n          <div class=\"row align-items-center justify-content-center\">\n              <h2 class=\"display-4 mb-2\">${slide.title}</h2>\n          </div>\n          <div class=\"row align-items-center justify-content-center\"> \n            <h3>${slide.subtitle}</h3>\n          </div>\n          <div class=\" mt-4 row align-items-center justify-content-center\"> \n            <a class=\"btn btn-primary\" href=\"${slide.btnUrl}\">\n                ${slide.btnText}\n            </a>\n          </div>\n        </div>\n    </div>\n  </div>`)\n  })\n});\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./public/assets/js/script.js?");
 
 /***/ })
 

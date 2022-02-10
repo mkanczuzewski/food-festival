@@ -81,32 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/js/events.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./public/assets/js/events.js");
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./assets/js/domMethods.js":
-/*!*********************************!*\
-  !*** ./assets/js/domMethods.js ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("function createEl(htmlString, attrs, ...children) {\r\n  if (typeof htmlString !== \"string\") {\r\n    throw Error(\"Argument 'htmlString' is required and must be a string\");\r\n  }\r\n\r\n  const el = document.createElement(htmlString);\r\n\r\n  if (typeof attrs === \"object\") {\r\n    for (let key in attrs) {\r\n      if (key.substring(0, 2) === \"on\") {\r\n        el.addEventListener(key.substring(2).toLowerCase(), attrs[key]);\r\n      } else if (key === \"style\") {\r\n        for (let rule in attrs[key]) {\r\n          el.style[rule] = attrs[key][rule];\r\n        }\r\n      } else {\r\n        el.setAttribute(key, attrs[key]);\r\n      }\r\n    }\r\n  }\r\n\r\n  children.forEach(function(child) {\r\n    let node;\r\n\r\n    if (child.constructor.name.includes(\"Element\")) {\r\n      node = child;\r\n    } else {\r\n      node = document.createTextNode(child);\r\n    }\r\n\r\n    el.appendChild(node);\r\n  });\r\n\r\n  return el;\r\n}\r\n\r\nmodule.exports = createEl;\n\n//# sourceURL=webpack:///./assets/js/domMethods.js?");
-
-/***/ }),
-
-/***/ "./assets/js/events.js":
-/*!*****************************!*\
-  !*** ./assets/js/events.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\r\nconst createEl = __webpack_require__(/*! ./domMethods */ \"./assets/js/domMethods.js\");\r\n\r\nif (window.location.href.indexOf(\"event\") > -1) {\r\n  const currentEvent = JSON.parse(localStorage.getItem(\"currentEvent\")) || {\r\n      title: \"Title Placeholder\",\r\n      subtitle: \"\",\r\n      description: \"\"\r\n  };\r\n\r\n  const pageEl = document.querySelector(\"#page\");\r\n  \r\n  const containerEl = createEl(\"div\", {class: \"container\"},\r\n    createEl(\"div\", {class: \"card mb-3\"}, \r\n      createEl(\"img\", {class: \"card-img-top\", style: \"width: 5px\", src: currentEvent.image || \"https://via.placeholder.com/350x150\"}),\r\n      createEl(\"div\", {class: \"card-body\"}, \r\n        createEl(\"h1\", {class: \"card-title\"}, currentEvent.title || \"\"),\r\n        createEl(\"h2\", {class: \"text-muted\"}, currentEvent.subtitle || \"\"),\r\n        createEl(\"p\", {class: \"card-text mt-3\"}, currentEvent.description || createLoremIpsum(100)),\r\n        createEl(\"a\", {class: \"btn btn-primary\", href: \"tickets.html\"}, \"Buy Tickets\")\r\n      )\r\n    ),\r\n    \r\n  )\r\n  pageEl.appendChild(containerEl)\r\n}\n\n//# sourceURL=webpack:///./assets/js/events.js?");
-
-/***/ }),
 
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
@@ -150,6 +128,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 /***/ (function(module, exports) {
 
 eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn this;\n})();\n\ntry {\n\t// This works if eval is allowed (see CSP)\n\tg = g || new Function(\"return this\")();\n} catch (e) {\n\t// This works if the window reference is available\n\tif (typeof window === \"object\") g = window;\n}\n\n// g can still be undefined, but nothing to do about it...\n// We return undefined, instead of nothing here, so it's\n// easier to handle this case. if(!global) { ...}\n\nmodule.exports = g;\n\n\n//# sourceURL=webpack:///./node_modules/webpack/buildin/global.js?");
+
+/***/ }),
+
+/***/ "./public/assets/js/domMethods.js":
+/*!****************************************!*\
+  !*** ./public/assets/js/domMethods.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function createEl(htmlString, attrs, ...children) {\n  if (typeof htmlString !== \"string\") {\n    throw Error(\"Argument 'htmlString' is required and must be a string\");\n  }\n\n  const el = document.createElement(htmlString);\n\n  if (typeof attrs === \"object\") {\n    for (let key in attrs) {\n      if (key.substring(0, 2) === \"on\") {\n        el.addEventListener(key.substring(2).toLowerCase(), attrs[key]);\n      } else if (key === \"style\") {\n        for (let rule in attrs[key]) {\n          el.style[rule] = attrs[key][rule];\n        }\n      } else {\n        el.setAttribute(key, attrs[key]);\n      }\n    }\n  }\n\n  children.forEach(function(child) {\n    let node;\n\n    if (child.constructor.name.includes(\"Element\")) {\n      node = child;\n    } else {\n      node = document.createTextNode(child);\n    }\n\n    el.appendChild(node);\n  });\n\n  return el;\n}\n\nmodule.exports = createEl;\n\n//# sourceURL=webpack:///./public/assets/js/domMethods.js?");
+
+/***/ }),
+
+/***/ "./public/assets/js/events.js":
+/*!************************************!*\
+  !*** ./public/assets/js/events.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\nconst createEl = __webpack_require__(/*! ./domMethods */ \"./public/assets/js/domMethods.js\");\n\nif (window.location.href.indexOf(\"event\") > -1) {\n  const currentEvent = JSON.parse(localStorage.getItem(\"currentEvent\")) || {\n      title: \"Title Placeholder\",\n      subtitle: \"\",\n      description: \"\"\n  };\n\n  const pageEl = document.querySelector(\"#page\");\n  \n  const containerEl = createEl(\"div\", {class: \"container\"},\n    createEl(\"div\", {class: \"card mb-3\"}, \n      createEl(\"img\", {class: \"card-img-top\", style: \"width: 5px\", src: currentEvent.image || \"https://via.placeholder.com/350x150\"}),\n      createEl(\"div\", {class: \"card-body\"}, \n        createEl(\"h1\", {class: \"card-title\"}, currentEvent.title || \"\"),\n        createEl(\"h2\", {class: \"text-muted\"}, currentEvent.subtitle || \"\"),\n        createEl(\"p\", {class: \"card-text mt-3\"}, currentEvent.description || createLoremIpsum(100)),\n        createEl(\"a\", {class: \"btn btn-primary\", href: \"tickets.html\"}, \"Buy Tickets\")\n      )\n    ),\n    \n  )\n  pageEl.appendChild(containerEl)\n}\n\n//# sourceURL=webpack:///./public/assets/js/events.js?");
 
 /***/ })
 
