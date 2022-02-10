@@ -19,7 +19,7 @@ $(document).ready(function() {
             image: calEvent.image
         }))
         
-        window.location.href = "events.html"
+        window.location.href = "./events.html"
       }
 
       const events = [
